@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <script src="https://kit.fontawesome.com/d8812e0ed1.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="styles.css">
+  
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+ 
+</head>
+<body>
+<div class="main-container">
+  <div class="nav">
+    <div class="sub-section11"><h1>Snap</h1></div>
+    <i class="fa-sharp fa-solid fa-bars" id="icon"></i>
+    
+    <div id="nav-section1" class="nav-section1">
+      
+      <div class="fa">
+        
+        <i class="fa-light fa-xmark fa-lg" id="icon1"></i>
+      </div>
+      <div class="sub-section12">
+          <ul>
+            <li id="features"><a href="#">Features</a><i class="fas fa-angle-down" style="color: #434447;"></i>
+              <div class="list" id="list">
+                <ul>
+                  <li><i class="fas fa-clipboard-list fa-spin fa-lg" style="color: #040faf;"></i>Todolist</li>
+                  <li><i class="fas fa-calendar fa-spin" style="color: #064ecb;"></i>Calender</li>
+                  <li><i class="fas fa-bell fa-spin fa-lg" style="color: #f0eb51;"></i>Reminders</li>
+                  <li><i class="fas fa-clock fa-spin" style="color: #f556e8;"></i>planing</li>
+                </ul>
+              </div>
+            </li>
+            <li id="company"><a href="#">Company</a><i class="fas fa-angle-down" style="color: #434447;"></i>
+              <div class="list1" id="list1">
+                <ul>
+                  <li>History</li>
+                  <li>Our Team</li>
+                  <li>Blog</li>
+                  
+                </ul>
+              </div>
+            </li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+  
+      </div>
+      
+      <div class="nav-section2">
+        <ul>
+          <li>Login</li>
+          <li>Register</li>
+        </ul>
+      </div>
+    </div>
+    
+
+    
+   
+  </div>
+
+  
+  
+
+  <div class="container">
+    <div class="sub-container1">
+      <div class="mini-div">
+        <h1>Make remote work</h1>
+        <p>get your team in your sync. no matter your location, streamline processes, create team rituals and watch productivity soar.</p>
+        <a href="#">learn more</a>
+      </div>
+      <div class="sub-container1-img">
+        <img src="./images/client-databiz.svg" alt="">
+        <img src="./images/client-audiophile.svg" alt="">
+        <img src="./images/client-meet.svg" alt="">
+        <img src="./images/client-maker.svg" alt="">
+      </div>
+      
+    </div>
+    <div class="sub-container2">
+      <!-- <img src="./images/image-hero-desktop.png" alt=""> -->
+    </div>
+  </div>
+</div>
+  <script>
+    document.getElementById('features').addEventListener('click', function() {
+      if (document.getElementById("list").classList[0] === "list") {
+        document.getElementById("list").setAttribute("class", "dropdown")
+        if (document.getElementById("list1").classList[0] === "dropdown1") {
+          document.getElementById("list1").setAttribute("class", "list1")
+        }
+           
+      }
+   
+      else{
+        document.getElementById("list").setAttribute("class", "list")
+      }
+    })
+
+
+    document.getElementById('company').addEventListener('click', function() {
+      if (document.getElementById("list1").classList[0] === "list1") {
+        document.getElementById("list1").setAttribute("class", "dropdown1")
+        if (document.getElementById("list").classList[0] === "dropdown") {
+          document.getElementById("list").setAttribute("class", "list")
+        }
+           
+      }
+   
+      else{
+        document.getElementById("list1").setAttribute("class", "list1")
+      }})
+
+      document.getElementById("icon").addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("got clicked");
+        document.getElementById("nav-section1").style.right = "0"
+      })
+
+      document.getElementById("icon1").addEventListener("click", (e) => {
+        console.log("you just clicked me")
+        if(document.getElementById("nav-section1").style.right) {
+          console.log("you are damn right")
+          document.getElementById("nav-section1").style.right = "-100%"
+        }
+      })
+
+    
+  </script>
+</body>
+</html>
